@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Question 1 :- Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype ?</p>
+    <pre>
+        let calculator = {
+        calc : function(a,b){
+          console.log(a+b)
+          console.log(a-b)
+          console.log(a*b)
+          console.log(a/b)
+        }
+      }
+      
+      let child = Object.create(calculator)
+      child.calc(5,7)
+    </pre>
+    <p>Question 2 :- Write code to explain prototype chaining ?</p>
+    <pre>
+        let calculator = {
+            calc : function(a,b){
+              console.log(a+b)
+              console.log(a-b)
+              console.log(a*b)
+              console.log(a/b)
+            }
+          }
+          
+          let child = Object.create(calculator)
+          child.calc(5,7)
+    
+          let proto =Object.getPrototypeOf(calculator)
+          console.log(proto)
+    
+          let proto1 =Object.getPrototypeOf(proto)
+          console.log(proto1)
+    </pre>
+    <p>Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays ?</p>
+    <pre>
+      let sum = {
+        sumOfArray : function(array){
+          let N = array.length
+          let sum = 0
+          for (i = 0; i < N; i++){
+            sum = sum + array[i]
+          }
+          console.log(sum)
+        }
+      }
+      
+      sum.sumOfArray([15,72,39,48,56,78,82,93]) 
+    </pre>
+    <p>Write a JavaScript function to retrieve all the names of object's own and inherited properties ?</p>
+    <pre>
+      let newObj = {
+        Name : "XYZ",
+        Batch : "EA20",
+        Year : 2020,
+        Total : 4
+      }
+      
+      let Obj = Object.getOwnPropertyNames(newObj)
+      console.log(Obj)
+    </pre>
+</body>
+</html>
